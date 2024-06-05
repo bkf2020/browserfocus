@@ -1,0 +1,26 @@
+{
+	"name": "browserfocus",
+	"version": "1.0",
+	"description": "be more focused when browsing. when the browser is opened, enter the whitelist",
+	"permissions": [
+		"declarativeNetRequest",
+		"tabs",
+		"storage",
+		"alarms",
+		"notifications"
+	],
+	"host_permissions": [
+		"*://*/*"
+	],
+	"action": {
+		"default_popup": "index.html"
+	},
+	"options_ui": {
+		"page": "setrules.html",
+		"open_in_tab": true
+	},	 
+	"background": {
+		"service_worker": "background.js"
+	},
+	"manifest_version": 3
+}

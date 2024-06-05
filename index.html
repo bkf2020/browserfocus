@@ -1,0 +1,42 @@
+<!--
+    liblock: libre site blocker to block distracting websites
+    Copyright (C) 2021-present bkf2020
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, ONLY version 3 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>browserfocus</title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body style="width: 350px;">
+		<h2 id="task-name">Your current task:</h2>
+		<h2 id="blockTime">You are blocking until:</h2>
+		<h2 class="timer"><span class="hour"></span><span class="min"></span><span class="sec"></span></h2>
+		<p><button id="optionsButton">change blocked websites and start blocking</button></p>
+		<p>
+			liblock - libre site blocker
+		</p>
+		<p>
+			<a href="https://github.com/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Github</a> |
+			<a href="https://gitlab.com/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Gitlab</a> |
+			<a href="https://codeberg.org/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Codeberg</a>
+		</p>
+		<script src="openOptions.js"></script>
+		<script src="timer.js"></script>
+	</body>
+</html>

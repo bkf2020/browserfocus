@@ -1,0 +1,108 @@
+<!--
+    liblock: libre site blocker to block distracting websites
+    Copyright (C) 2021-present bkf2020
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, ONLY version 3 of the License.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>browserfocus options</title>
+		<link rel="stylesheet" href="/style.css">
+	</head>
+	<body>
+		<h1>browserfocus options</h1>
+		<div id="notBlocking">
+			<h2>Current whitelist</h2>
+			<div id="rules">
+				<label style="display: none;" id="rule0text"></label>
+				<button style="display: none;" id="rule0btn">Delete site</button>
+				<br id="rule0br"/>
+			</div>
+			<label for="new-rule">Type your new whitelist:</label>
+			<input type="text" id="new-rule" name="new-rule" value="">
+			<button id="add-rule">Add the new whitelist!</button>
+			<br/>
+
+			<h3>How whitelist blocking works</h3>
+			<p>
+				<b>Note:</b> Please type rules in the format
+				<code>website.com</code>. Do NOT include <code>www</code>
+				or <code>/</code> at the end!
+			</p>
+			<p>Examples:</p>
+			<ul>
+				<li>
+					Typing <code>example.com</code> WILL WHITELIST
+					<code>example.com</code> AND <code>a.example.com</code>
+					AND <code>example.com/test</code>
+				</li>
+				<li>
+					Typing <code>a.example.com</code> WILL WHITELIST
+					<code>a.example.com</code> but NOT <code>example.com</code>.
+					It WILL whitelist <code>b.a.example.com</code>
+				</li>
+				<li>
+					Typing <code>example.com/test</code> WILL whitelist
+					<code>example.com/test</code> AND <code>example.com/test/test</code>
+					AND <code>a.example.com/test</code> BUT NOT <code>example.com</code>.
+				</li>
+			</ul>
+
+			<h2>Save rules</h2>
+			<button id="save-rules">Save rules</button>
+			<p>
+				<b>Note:</b> Rules are saved when you close out of this
+				tab, but press this button in case a power outage happens
+				or your laptop runs out of battery.
+			</p>
+			<p>
+			<mark><b>If you type a rule and don't add it, it won't be saved!</b></mark>
+			</p>
+
+			<h2>Name of task</h2>
+			<label for="task-name">Choose name for the task: </label>
+			<input id="task-name" type="text" name="task-name"><br/>
+			<h2>Stop the whitelist</h2>
+			<label for="rules-time">Choose a time to stop the whitelist: </label>
+			<input id="rules-time" type="time" name="rules-time" value="00:00"><br/>
+			<p><b>Note:</b> The whitelisting time seems to delayed for about one minute!</p>
+			<button id="start-blocking">Start whitelist</button>
+		</div>
+
+		<div id="blocking" style="display: none;">
+			<h2 id="task-name-h2">Your task:</h2>
+			<h2>You are currently whitelisting these websites!</h2>
+			<ul id="blockedWebsites">
+			</ul>
+			<h2 id="blockTime">You are blocking until</h2>
+			<h2 class="timer"><span class="hour"></span><span class="min"></span><span class="sec"></span></h2>
+			<p><b>Note:</b> The whitelisting time seems to delayed for about one minute!</p>
+		</div>
+
+		<h2>About</h2>
+		<p>
+			browserfocus - libre site blocker
+		</p>
+		<p>
+			<a href="https://github.com/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Github</a> |
+			<a href="https://gitlab.com/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Gitlab</a> |
+			<a href="https://codeberg.org/bkf2020/liblock" target="_blank" rel="noopener noreferrer">Codeberg</a>
+		</p>
+		<script src="rules.js"></script>
+		<script src="timer.js"></script>
+	</body>
+</html>
